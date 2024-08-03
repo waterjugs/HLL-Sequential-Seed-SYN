@@ -132,7 +132,7 @@ goto CTRLloop
 
 :CTRLloop
 
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URL_CTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
 
 if %countCTRL% gtr %SEEDED_THRESHOLD% (
     echo Player count is greater than %SEEDED_THRESHOLD%.
@@ -140,7 +140,7 @@ if %countCTRL% gtr %SEEDED_THRESHOLD% (
 ) else (
     echo Player count is %countCTRL%. Waiting 30 seconds...
     timeout /t 30 >nul
-    goto SYNloop
+    goto CTRLloop
 )
 
 :endloop

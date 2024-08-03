@@ -8,6 +8,6 @@ SEEDED_THRESHOLD=80
 
 RCON_URLROTN=https://rotn-stats.crcon.cc/api/public_info
 RCON_URLSYN=https://stats.syn.team/api/public_info
-RCON_URLCTRL=https://hll.luckystrikercon.com/api/public_info
+RCON_URLCTRL=http://192.154.226.208:7010/api/public_info
 
 
