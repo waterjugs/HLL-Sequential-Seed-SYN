@@ -23,16 +23,19 @@
 
 IF YOU WANT YOUR COMPUTER TO GO TO SLEEP AFTER SEEDING!
 
--Go to the instal directory should be "C:\users\*youruserprofile*\hll-seq-seed"
--Find the script.bat file.
--Right Click the file and select "edit in Notepad"
--Go to the end of the file
-Delete the letters "REM" and the space. 
+- Go to the instal directory should be "C:\users\*youruserprofile*\hll-seq-seed"
+- Find the script.bat file.
+- Right Click the file and select "edit in Notepad"
+- Go to the end of the file
+- Delete the letters "REM" and the space.
+
 It should now read like 
-"
-echo Putting the PC to sleep...
-powercfg -h off
-rundll32.exe powrprof.dll,SetSuspendState 0,1,0
-powercfg -h on
-"
-It should put your computer to sleep after seeding now. 
+
+
+> echo Putting the PC to sleep... <br>
+> powercfg -h off <br>
+> rundll32.exe powrprof.dll,SetSuspendState 0,1,0 <br>
+> powercfg -h on <br>
+
+
+- It should put your computer to sleep after seeding now. 
