@@ -10,8 +10,8 @@
   </Triggers>
   <Actions>
     <Exec>
-      <Command>%USERPROFILE%\hll-seed\script.bat</Command>
-      <WorkingDirectory>%USERPROFILE%\hll-seed</WorkingDirectory>
+      <Command>%USERPROFILE%\hll-seq-seed\script.bat</Command>
+      <WorkingDirectory>%USERPROFILE%\hll-seq-seed</WorkingDirectory>
     </Exec>
   </Actions>
   <Settings>
