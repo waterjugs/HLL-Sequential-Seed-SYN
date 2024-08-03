@@ -16,7 +16,7 @@
 - Repeat these same steps for `script.bat`
 - At this point you should be able to open up your Windows Task Scheduler and see the newly created task `SYN seed`
 - You can find your Windows Task Scheduler by hitting the windows key and typing "Task" then clicking on the "Task Schduler"
-- ![task](https://github.com/Craven73/hll-seed/assets/50681292/d57a539e-9eb3-49e5-9e53-5c65ebd34308)
+![task](https://github.com/Craven73/hll-seed/assets/50681292/d57a539e-9eb3-49e5-9e53-5c65ebd34308)
   
 - Even if you start late you will still be helping out! The task skips over already seeded servers so dont be afraid to start it manualy whenever you can if thats what you want to do.
 - You can manualy launch the bot by going to the instal directory "C:\users\*youruserprofile*\hll-seq-seed" and launching script.bat
