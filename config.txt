@@ -4,7 +4,7 @@ JQ_URL=https://github.com/stedolan/jq/releases/latest/download/jq-win64.exe
 JQ_INSTALL_PATH=%USERPROFILE%\hll-seq-seed\jq
 JQ_PATH=%USERPROFILE%\hll-seq-seed\jq\jq.exe
 
-SEEDED_THRESHOLD=80
+SEEDED_THRESHOLD=70
 
 RCON_URLROTN=https://rotn-stats.crcon.cc/api/public_info
 RCON_URLSYN=https://stats.syn.team/api/public_info
