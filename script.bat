@@ -46,7 +46,7 @@ if %countROTN% gtr %SEEDED_THRESHOLD% (
 )
 
 :endloop
-TASKKILL /IM HLL-Win64-Shipping.exe /F
+AltF4.exe
 :SYNSEED
 echo.
 
@@ -96,7 +96,7 @@ if %countSYN% gtr %SEEDED_THRESHOLD% (
 )
 
 :endloop
-TASKKILL /IM HLL-Win64-Shipping.exe /F
+AltF4.exe
 :CTRLSEED
 echo Server is seeded. Onto CTRL
 echo Launching Seed...
