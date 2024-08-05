@@ -26,6 +26,7 @@ if "%CD%"=="%SEED_DIRECTORY%" (
 	copy /y "LeaveGame.exe" "%SEED_DIRECTORY%\"
 	copy /y "ROTNSpawnSL.exe" "%SEED_DIRECTORY%\"
 	copy /y "SYNSpawnSL.exe" "%SEED_DIRECTORY%\"
+	copy /y "altf4.exe" "%SEED_DIRECTORY%\"
    
 )
 
