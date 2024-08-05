@@ -47,6 +47,8 @@ if %countROTN% gtr %SEEDED_THRESHOLD% (
 
 :endloop
 altf4.exe
+echo Waiting for HLL to Close.
+timeout /t 30 >nul
 :SYNSEED
 echo.
 
@@ -97,6 +99,8 @@ if %countSYN% gtr %SEEDED_THRESHOLD% (
 
 :endloop
 altf4.exe
+echo Waiting for HLL to Close.
+timeout /t 30 >nul
 :CTRLSEED
 echo Server is seeded. Onto CTRL
 echo Launching Seed...
