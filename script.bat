@@ -19,12 +19,12 @@ goto SYNSEED
 )
 if %alliedcountROTN% leq %axiscountROTN% (
 echo Launching as Allies
-ROTNSpawnSL.exe Allied 
+SpawnSL.exe Allied "=ROTN= Rangers of the North"
 timeout /t 30 >nul
 goto ROTNloop
 ) else (
 echo Launching as Axis
-ROTNSpawnSL.exe Axis 
+SpawnSL.exe Axis "=ROTN= Rangers of the North"
 timeout /t 30 >nul
 
 goto ROTNloop
@@ -35,14 +35,31 @@ goto ROTNloop
 :ROTNloop
 
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.player_count"`) do set countROTN=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.raw_time_remaining"`) do set timeROTN=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.players.allied"`) do set alliedcountROTN=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.players.axis"`) do set axiscountROTN=%%i
 
 if %countROTN% gtr %SEEDED_THRESHOLD% (
     echo Player count is greater than %SEEDED_THRESHOLD%.
     goto endloop
 ) else (
     echo Player count is %countROTN%. Waiting 30 seconds...
+	echo Timeleft: %timeROTN%
+	if %timeROTN% geq 1:28:00 (
+	echo New Map.
+		if %alliedcountROTN% leq %axiscountROTN% (
+		echo Spawning
+		ReSpawnSL.exe Allied
+		) else (
+		echo Spawning
+		ReSpawnSL.exe Axis
+		)
+	timeout /t 120 >nul
+	goto ROTNloop
+	) else (
     timeout /t 30 >nul
     goto ROTNloop
+)
 )
 
 :endloop
@@ -71,12 +88,12 @@ goto CTRLSEED
 
 if %alliedcountSYN% leq %axiscountSYN% (
 echo Launching as Allies
-SYNSpawnSL.exe Allied 
+SpawnSL.exe Allied "Syndicate | US East"
 timeout /t 30 >nul
 goto SYNloop
 ) else (
 echo Launching as Axis
-SYNSpawnSL.exe Axis 
+SpawnSL.exe Axis "Syndicate | US East"
 timeout /t 30 >nul
 
 goto SYNloop
@@ -87,14 +104,31 @@ goto SYNloop
 :SYNloop
 
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.player_count"`) do set countSYN=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.raw_time_remaining"`) do set timeSYN=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.players.allied"`) do set alliedcountSYN=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.players.axis"`) do set axiscountSYN=%%i
 
 if %countSYN% gtr %SEEDED_THRESHOLD% (
     echo Player count is greater than %SEEDED_THRESHOLD%.
     goto endloop
 ) else (
     echo Player count is %countSYN%. Waiting 30 seconds...
+	echo Timeleft: %timeSYN%
+	if %timeSYN% geq 1:28:00 (
+	echo New Map.
+		if %alliedcountSYN% leq %axiscountSYN% (
+		echo Spawning
+		ReSpawnSL.exe Allied
+		) else (
+		echo Spawning
+		ReSpawnSL.exe Axis
+		)
+	timeout /t 120 >nul
+	goto SYNloop
+	) else (
     timeout /t 30 >nul
     goto SYNloop
+)
 )
 
 :endloop
@@ -121,12 +155,12 @@ goto endloop
 
 if %alliedcountCTRL% leq %axiscountCTRL% (
 echo Launching as Allies
-CTRLSpawnSL.exe Allied 
+SpawnSL.exe Allied "Ctrl Alt Defeat [Hellfire Gaming Server]"
 timeout /t 30 >nul
 goto CTRLloop
 ) else (
 echo Launching as Axis
-CTRLSpawnSL.exe Axis 
+SpawnSL.exe Axis "Ctrl Alt Defeat [Hellfire Gaming Server]"
 timeout /t 30 >nul
 
 goto CTRLloop
@@ -137,19 +171,36 @@ goto CTRLloop
 :CTRLloop
 
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.raw_time_remaining"`) do set timeCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.players.allied"`) do set alliedcountCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.players.axis"`) do set axiscountCTRL=%%i
 
 if %countCTRL% gtr %SEEDED_THRESHOLD% (
     echo Player count is greater than %SEEDED_THRESHOLD%.
     goto endloop
 ) else (
     echo Player count is %countCTRL%. Waiting 30 seconds...
+	echo Timeleft: %timeCTRL%
+	if %timeCTRL% geq 1:28:00 (
+	echo New Map.
+		if %alliedcountCTRL% leq %axiscountCTRL% (
+		echo Spawning
+		ReSpawnSL.exe Allied
+		) else (
+		echo Spawning
+		ReSpawnSL.exe Axis
+		)
+	timeout /t 120 >nul
+	goto CTRLloop
+	) else (
     timeout /t 30 >nul
     goto CTRLloop
+)
 )
 
 :endloop
 
-TASKKILL /IM HLL-Win64-Shipping.exe /F
+TASKKILL /IM HLL-Win64-Shipping.exe
 
 echo Waiting for HLL to finish closing
 timeout /t 60 >nul

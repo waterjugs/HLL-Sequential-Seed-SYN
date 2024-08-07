@@ -22,10 +22,8 @@ if "%CD%"=="%SEED_DIRECTORY%" (
     copy /y "script.bat" "%SEED_DIRECTORY%\"
     copy /y "task.xml" "%SEED_DIRECTORY%\"
     copy /y "config.txt" "%SEED_DIRECTORY%\"
-    copy /y "CTRLSpawnSL.exe" "%SEED_DIRECTORY%\"
-	copy /y "LeaveGame.exe" "%SEED_DIRECTORY%\"
-	copy /y "ROTNSpawnSL.exe" "%SEED_DIRECTORY%\"
-	copy /y "SYNSpawnSL.exe" "%SEED_DIRECTORY%\"
+    copy /y "SpawnSL.exe" "%SEED_DIRECTORY%\"
+	copy /y "ReSpawnSL.exe" "%SEED_DIRECTORY%\"
 	copy /y "altf4.exe" "%SEED_DIRECTORY%\"
    
 )
