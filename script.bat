@@ -8,8 +8,12 @@ echo Checking Player counts ..
 
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.players.allied"`) do set alliedcountROTN=%%i
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.players.axis"`) do set axiscountROTN=%%i
-
- 
+IF NOT DEFINED axiscountROTN goto ServerDownROTN
+IF DEFINED axiscountROTN goto ServerUpROTN
+:ServerDownROTN
+echo Server is Down. Skipping to next Server
+goto SYNSEED
+:ServerUpROTN
 echo.Allied Faction has %alliedcountROTN% players
 echo.Axis Faction has %axiscountROTN% players
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLROTN% ^| %JQ_PATH% -r ".result.player_count"`) do set countROTN=%%i
@@ -77,7 +81,12 @@ echo Checking Player counts ..
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.players.allied"`) do set alliedcountSYN=%%i
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.players.axis"`) do set axiscountSYN=%%i
 
- 
+IF NOT DEFINED axiscountSYN goto ServerDownSYN
+IF DEFINED axiscountSYN goto ServerUpSYN
+:ServerDownSYN
+echo Server is Down. Skipping to next Server
+goto CTRLSEED
+:ServerUpSYN
 echo.Allied Faction has %alliedcountSYN% players
 echo.Axis Faction has %axiscountSYN% players
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLSYN% ^| %JQ_PATH% -r ".result.player_count"`) do set countSYN=%%i
@@ -144,7 +153,12 @@ echo Checking Player counts ..
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.players.allied"`) do set alliedcountCTRL=%%i
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.players.axis"`) do set axiscountCTRL=%%i
 
- 
+IF NOT DEFINED axiscountCTRL goto ServerDownCTRL
+IF DEFINED axiscountCTRL goto ServerUpCTRL
+:ServerDownCTRL
+echo Server is Down. Skipping to end.
+goto endloop
+:ServerUpCTRL
 echo.Allied Faction has %alliedcountCTRL% players
 echo.Axis Faction has %axiscountCTRL% players
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
@@ -165,7 +179,7 @@ timeout /t 10 >nul
 
 goto CTRLloop
 )
-)
+
 
 
 :CTRLloop
