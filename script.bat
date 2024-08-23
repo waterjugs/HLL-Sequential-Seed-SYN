@@ -150,8 +150,8 @@ echo Launching Seed...
 echo.
 echo Checking Player counts ..
 
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.players.allied"`) do set alliedcountCTRL=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.players.axis"`) do set axiscountCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountCTRL=%%i
 
 IF NOT DEFINED axiscountCTRL goto ServerDownCTRL
 IF DEFINED axiscountCTRL goto ServerUpCTRL
@@ -185,9 +185,9 @@ goto CTRLloop
 :CTRLloop
 
 for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count"`) do set countCTRL=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.raw_time_remaining"`) do set timeCTRL=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.players.allied"`) do set alliedcountCTRL=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.players.axis"`) do set axiscountCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.time_remaining"`) do set timeCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLCTRL% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountCTRL=%%i
 
 if %countCTRL% gtr %SEEDED_THRESHOLD% (
     echo Player count is greater than %SEEDED_THRESHOLD%.
@@ -195,7 +195,7 @@ if %countCTRL% gtr %SEEDED_THRESHOLD% (
 ) else (
     echo Player count is %countCTRL%. Waiting 30 seconds...
 	echo Timeleft: %timeCTRL%
-	if %timeCTRL% geq 1:28:00 (
+	if %timeCTRL% geq 5280 (
 	echo New Map.
 		if %alliedcountCTRL% leq %axiscountCTRL% (
 		echo Spawning
