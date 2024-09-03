@@ -22,12 +22,12 @@ If %countROTN% gtr %SEEDED_THRESHOLD% (
 goto SYNSEED
 )
 if %alliedcountROTN% leq %axiscountROTN% (
-echo Launching as Allies. Time to Launch 3.5 Minutes.
+echo Launching as Allies. Time to Launch 4.5 Minutes.
 SpawnSL.exe Allied "=ROTN= Rangers of the North"
 timeout /t 10 >nul
 goto ROTNloop
 ) else (
-echo Launching as Axis. Time to Launch 3.5 Minutes.
+echo Launching as Axis. Time to Launch 4.5 Minutes.
 SpawnSL.exe Axis "=ROTN= Rangers of the North"
 timeout /t 10 >nul
 
@@ -97,12 +97,12 @@ goto CTRLSEED
 )
 
 if %alliedcountSYN% leq %axiscountSYN% (
-echo Launching as Allies. Time to Launch 3.5 Minutes.
+echo Launching as Allies. Time to Launch 4.5 Minutes.
 SpawnSL.exe Allied "Syndicate | US East"
 timeout /t 10 >nul
 goto SYNloop
 ) else (
-echo Launching as Axis. Time to Launch 3.5 Minutes.
+echo Launching as Axis. Time to Launch 4.5 Minutes.
 SpawnSL.exe Axis "Syndicate | US East"
 timeout /t 10 >nul
 
@@ -170,12 +170,12 @@ goto endloop
 )
 
 if %alliedcountCTRL% leq %axiscountCTRL% (
-echo Launching as Allies. Time to Launch 3.5 Minutes.
+echo Launching as Allies. Time to Launch 4.5 Minutes.
 SpawnSL.exe Allied "Ctrl Alt Defeat [Hellfire Gaming Server]"
 timeout /t 10 >nul
 goto CTRLloop
 ) else (
-echo Launching as Axis. Time to Launch 3.5 Minutes.
+echo Launching as Axis. Time to Launch 4.5 Minutes.
 SpawnSL.exe Axis "Ctrl Alt Defeat [Hellfire Gaming Server]"
 timeout /t 10 >nul
 
