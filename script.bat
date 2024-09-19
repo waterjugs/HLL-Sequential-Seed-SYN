@@ -217,10 +217,9 @@ if %countCTRL% gtr %SEEDED_THRESHOLD% (
 
 :endloop
 
-TASKKILL /IM HLL-Win64-Shipping.exe
-
-echo Waiting for HLL to finish closing
-timeout /t 60 >nul
+altf4.exe
+echo Waiting for HLL to Close.
+timeout /t 30 >nul
 
 echo Putting the PC to sleep...
 REM powercfg -h off
