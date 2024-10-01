@@ -62,7 +62,7 @@ if %countROTN% gtr %SEEDED_THRESHOLD% (
 	timeout /t 120 >nul
 	goto ROTNloop
 	) else (
-    timeout /t 30 >nul
+    timeout /t 60 >nul
     goto ROTNloop
 )
 )
@@ -70,7 +70,7 @@ if %countROTN% gtr %SEEDED_THRESHOLD% (
 :endloop
 altf4.exe
 echo Waiting for HLL to Close.
-timeout /t 30 >nul
+timeout /t 60 >nul
 :SYNSEED
 echo.
 
@@ -145,7 +145,7 @@ if %countSYN% gtr %SEEDED_THRESHOLD% (
 :endloop
 altf4.exe
 echo Waiting for HLL to Close.
-timeout /t 30 >nul
+timeout /t 60 >nul
 :CTRLSEED
 echo Server is seeded. Onto CTRL
 echo Launching Seed...
@@ -219,7 +219,7 @@ if %countCTRL% gtr %SEEDED_THRESHOLD% (
 
 altf4.exe
 echo Waiting for HLL to Close.
-timeout /t 30 >nul
+timeout /t 60 >nul
 
 echo Putting the PC to sleep...
 REM powercfg -h off
