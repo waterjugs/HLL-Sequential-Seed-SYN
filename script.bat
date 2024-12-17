@@ -176,7 +176,7 @@ timeout /t 10 >nul
 goto CTRLloop
 ) else (
 echo Launching as Axis. Time to Launch 4.5 Minutes.
-SpawnSL.exe Axis "Ctrl Alt Defeat [Hellfire Gaming Server]"
+SpawnSL.exe Axis "Ctrl Alt Defeat[Hellfire"
 timeout /t 10 >nul
 
 goto CTRLloop
