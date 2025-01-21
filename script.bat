@@ -171,7 +171,7 @@ goto endloop
 
 if %alliedcountCTRL% leq %axiscountCTRL% (
 echo Launching as Allies. Time to Launch 4.5 Minutes.
-SpawnSL.exe Allied "Ctrl Alt Defeat [Hellfire Gaming Server]"
+SpawnSL.exe Allied "Ctrl Alt Defeat[Hellfire"
 timeout /t 10 >nul
 goto CTRLloop
 ) else (
