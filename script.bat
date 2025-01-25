@@ -23,7 +23,7 @@ goto SYNSEED
 )
 if %alliedcountROTN% leq %axiscountROTN% (
 echo Launching as Allies. Time to Launch 4.5 Minutes.
-SpawnSL.exe Allied "=ROTN= Rangers of the North"
+SpawnSL.exe Allied "=ROTN= | discord"
 timeout /t 10 >nul
 goto ROTNloop
 ) else (
