@@ -28,7 +28,7 @@ timeout /t 10 >nul
 goto ROTNloop
 ) else (
 echo Launching as Axis. Time to Launch 4.5 Minutes.
-SpawnSL.exe Axis "=ROTN= Rangers of the North"
+SpawnSL.exe Axis "=ROTN= | discord"
 timeout /t 10 >nul
 
 goto ROTNloop
