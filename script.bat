@@ -225,8 +225,8 @@ echo Launching Seed...
 echo.
 echo Checking Player counts ..
 
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLHAUS% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountCTRL=%%i
-for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLHAUS% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountCTRL=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLHAUS% ^| %JQ_PATH% -r ".result.player_count_by_team.allied"`) do set alliedcountHAUS=%%i
+for /f "usebackq delims=," %%i in (`curl -s -X GET %RCON_URLHAUS% ^| %JQ_PATH% -r ".result.player_count_by_team.axis"`) do set axiscountHAUS=%%i
 
 IF NOT DEFINED axiscountHAUS goto ServerDownHAUS
 IF DEFINED axiscountHAUS goto ServerUpHAUS
