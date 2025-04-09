@@ -6,8 +6,7 @@ JQ_PATH=%USERPROFILE%\hll-seq-seed\jq\jq.exe
 
 SEEDED_THRESHOLD=75
 
-RCON_URLROTN=https://rotn-stats.crcon.cc/api/get_public_info
 RCON_URLSYN=https://stats.syn.team/api/get_public_info
 RCON_URLCTRL=http://192.154.226.208:8010/api/get_public_info
-RCON_URLHAUS=https://draft4-stats.squidds.tv/api/get_public_info
+
 
