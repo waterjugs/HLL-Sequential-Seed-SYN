@@ -32,7 +32,7 @@
 
 IF YOU WANT YOUR COMPUTER TO GO TO SLEEP AFTER SEEDING!
 
-- Go to the instal directory should be "C:\users\*youruserprofile*\hll-seq-seed"
+- Go to the instal directory should be "C:\users\\*youruserprofile*\hll-seq-seed"
 - Find the script.bat file.
 - Right Click the file and select "edit in Notepad"
 - Go to the end of the file
