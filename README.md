@@ -2,7 +2,7 @@
 
 - Delete all Intro Movies from your game folders. The movies are in  "SteamInstalation\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 - You must have a game resolution of 1920x1080, 2560x1440, or 3840x2160 for this to work.
-- If you have a ultrawide monitor resolution not listed above, go to C:\Users\*youruserprofile*\AppData\Local\HLL\Saved\Config\WindowsNoEditor
+- If you have a ultrawide monitor resolution not listed above, go to "C:\Users\*youruserprofile*\AppData\Local\HLL\Saved\Config\WindowsNoEditor"
 - Right CLick `GameUserSettings`
 - Click `Properties` 
 - Make sure under "Attributes:" neither of the boxes are checked/marked
