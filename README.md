@@ -1,7 +1,14 @@
 # Install
 
 - Delete all Intro Movies from your game folders. The movies are in  "SteamInstalation\steamapps\common\Hell Let Loose\HLL\Content\Movies"
-- You must have a game resolution of 1920x1080, 2560x1440, or 3840x2160 for this to work. It may work with ultra widescreen monitors using those resolutions but that is untested. 
+- You must have a game resolution of 1920x1080, 2560x1440, or 3840x2160 for this to work.
+- If you have a ultrawide monitor resolution not listed above, go to C:\Users\*youruserprofile*\AppData\Local\HLL\Saved\Config\WindowsNoEditor
+- Right CLick 'GameUserSettings'
+- Click 'Properties'
+- Make sure under "Attributes:" neither of the boxes are checked/marked
+- Click apply and close
+- Change your desktop resolution to 1920x1080, 2560x1440, or 3840x2160 for it to work
+
 - Download the latest release from the [releases](https://github.com/sbeinart86/HLL-Sequential-Seed/releases) page.
 - Extract the zip file
 - Double click on `enable.bat` to run
