@@ -3,7 +3,7 @@
 - This automatica seeding scipt only works for the steam application of Hell Let Loose currently.
 - Delete all Intro Movies from your game folders. The movies are in  "SteamInstalation\steamapps\common\Hell Let Loose\HLL\Content\Movies"
 - You must have one of the following monitor resolutions for the seeding script to work:
-  - 1920 x 1080
+	- 1920 x 1080
 	- 2560 x 1440
 	- 3840 x 2160
 	- 2560 x 1080
