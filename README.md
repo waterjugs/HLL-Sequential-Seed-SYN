@@ -10,7 +10,7 @@
   - 3440 x 1440
   - 5120 x 2160
 
-- Download the latest release from the [releases](https://github.com/sbeinart86/HLL-Sequential-Seed/releases) page.
+- Download the latest release from the [releases](https://github.com/waterjugs/HLL-Sequential-Seed-SYN/releases) page.
 - Extract the zip file
 - Double click on `enable.bat` to run
 - Click the `More info` button on defender pop up
